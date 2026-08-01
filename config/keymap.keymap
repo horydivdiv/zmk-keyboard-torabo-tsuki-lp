@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/input_transform.h>
-#include <dt-bindings/zmk/pointing_inputs.h>
 
 / {
     combos {

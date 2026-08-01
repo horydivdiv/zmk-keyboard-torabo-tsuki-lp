@@ -23,6 +23,61 @@
             bindings = <&mkp MB3>;
             key-positions = <27 28 29>;
         };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <46 47>;
+        };
+
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <47 48>;
+        };
+
+        left_click2 {
+            bindings = <&mkp MB1>;
+            key-positions = <32 33>;
+        };
+
+        right_click2 {
+            bindings = <&mkp MB2>;
+            key-positions = <33 34>;
+        };
+
+        middle_click2 {
+            bindings = <&mkp MB3>;
+            key-positions = <32 33 34>;
+        };
+
+        mkp_pre {
+            bindings = <&mkp MB4>;
+            key-positions = <63 64>;
+        };
+
+        mkp_nxt {
+            bindings = <&mkp MB5>;
+            key-positions = <64 65>;
+        };
+
+        m_up {
+            bindings = <&msc SCRL_UP>;
+            key-positions = <36 50>;
+        };
+
+        m_down {
+            bindings = <&msc SCRL_DOWN>;
+            key-positions = <50 64>;
+        };
+
+        m_left {
+            bindings = <&msc SCRL_LEFT>;
+            key-positions = <49 50>;
+        };
+
+        m_right {
+            bindings = <&msc SCRL_RIGHT>;
+            key-positions = <50 51>;
+        };
     };
 
     behaviors {
@@ -57,11 +112,11 @@
 
         Main {
             bindings = <
-&kp ESC    &kp N1        &kp N2        &kp N3            &kp N4     &kp N5                             &kp N6               &kp N7    &kp N8     &kp N9          &kp N0          &kp DELETE
-&kp TAB    &kp Q         &kp W         &kp E             &kp R      &kp T                              &kp Y                &kp U     &kp I      &kp O           &kp P           &kp BSPC
-&kp CAPS   &kp A         &kp S         &kp D             &kp F      &kp G      &LayerTD01  &LayerTD02  &kp H                &kp J     &kp K      &kp L           &kp MINUS       &kp SEMI
-&kp LSHFT  &kp Z         &kp X         &kp C             &kp V      &kp B      &kp TAB     &HOME_END   &kp N                &kp M     &kp COMMA  &kp DOT         &kp UP_ARROW    &kp SLASH
-&kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_BRACKET  &kp GRAVE  &kp SPACE  &kp ENTER   &kp RSHIFT  &kp INTERNATIONAL_4  &kp BSPC  &kp RALT   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp ESC    &kp N1        &kp N2        &kp N3            &kp N4       &kp N5                             &kp N6               &kp N7    &kp N8     &kp N9          &kp N0          &kp DELETE
+&kp TAB    &kp Q         &kp W         &kp E             &kp R        &kp T                              &kp Y                &kp U     &kp I      &kp O           &kp P           &kp BSPC
+&kp CAPS   &kp A         &kp S         &kp D             &kp F        &kp G      &LayerTD01  &LayerTD02  &kp H                &kp J     &kp K      &kp L           &kp MINUS       &kp SEMI
+&kp LSHFT  &kp Z         &kp X         &kp C             &kp V        &kp B      &kp TAB     &HOME_END   &kp N                &kp M     &kp COMMA  &kp DOT         &kp UP_ARROW    &kp SLASH
+&kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_BRACKET  &lt 4 GRAVE  &kp SPACE  &kp ENTER   &kp RSHIFT  &kp INTERNATIONAL_4  &kp BSPC  &kp RALT   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
         };
 

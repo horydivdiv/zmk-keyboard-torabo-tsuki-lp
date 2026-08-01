@@ -105,16 +105,6 @@
             #binding-cells = <0>;
             bindings = <&kp HOME>, <&kp END>;
         };
-
-        trackball_listener {
-            compatible = "zmk,input-listener";
-            device = <&pointing_device>; /* overlayで定義されたデバイス名 */
-    
-            scroller {
-                layers = <4>; /* lt 4 GRAVE などでレイヤー4にいる間のみスクロール化 */
-                input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
-            };
-        };
     };
 
     keymap {

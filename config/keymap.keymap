@@ -160,4 +160,14 @@
             >;
         };
     };
+
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+
+        scroll_layer_4 {
+            layers = <4>;
+            input-processors = <&zip_xy_to_scroll_wheel>;
+        };
+    };
 };

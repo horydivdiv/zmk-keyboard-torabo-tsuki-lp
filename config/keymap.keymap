@@ -108,11 +108,10 @@
 
         trackball_listener {
             compatible = "zmk,input-listener";
-            device = <&vtrackball>; /* ※リポジトリ側で定義されているトラックボールデバイス名 */
+            device = <&pointing_device>; /* overlayで定義されたデバイス名 */
     
-            /* 例: レイヤー 4 (scrollレイヤー) がアクティブな時だけスクロール化 */
             scroller {
-                layers = <4>;
+                layers = <4>; /* lt 4 GRAVE などでレイヤー4にいる間のみスクロール化 */
                 input-processors = <&zip_xy_to_scroll_mapper>;
             };
         };

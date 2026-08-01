@@ -158,14 +158,6 @@
 &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
-
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&pointing_device>; /* ※overlay側で定義されている名称を指定 */
-
-        /* XY軸の移動量をマウスホイール（スクロール）イベントに変換 */
-        input-processors = <&zip_xy_to_scroll_wheel>;
-
         };
     };
 };

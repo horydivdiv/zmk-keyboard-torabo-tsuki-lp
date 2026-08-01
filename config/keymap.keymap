@@ -112,7 +112,7 @@
     
             scroller {
                 layers = <4>; /* lt 4 GRAVE などでレイヤー4にいる間のみスクロール化 */
-                input-processors = <&zip_xy_to_scroll_mapper>;
+                input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
             };
         };
     };

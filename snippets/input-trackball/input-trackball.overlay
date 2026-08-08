@@ -1,3 +1,4 @@
+
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -17,22 +18,13 @@
 };
 
 / {
-    // 1つ目: 通常時のポインティング設定（カーソル移動用）
-    trackball_xy {
+    trackball_listener {
         compatible = "zmk,input-listener";
         device = <&pointing_device>;
-        layers = <0 1 2>;
-        // ここで通常のカーソル感度を調整します
-        input-processors = <&zip_xy_scaler 1 3>;
-    };
-
-    // 2つ目: スクロール時の設定（スクロール用）
-    trackball_scroll {
-        compatible = "zmk,input-listener";
-        device = <&pointing_device>;
-        layers = <3 4>;
-        input-processors = 
-            <&zip_xy_to_scroll_mapper>, 
-            <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
+ 
+        scroller {
+            layers = <3 4>;
+            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 0 10000>;
+        };
     };
 };

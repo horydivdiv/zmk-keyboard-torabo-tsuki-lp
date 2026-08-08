@@ -17,24 +17,22 @@
 };
 
 / {
-    trackball_listener {
+    // 1つ目: 通常時のポインティング設定（カーソル移動用）
+    trackball_xy {
         compatible = "zmk,input-listener";
         device = <&pointing_device>;
+        layers = <0 1 2>;
+        // ここで通常のカーソル感度を調整します
+        input-processors = <&zip_xy_scaler 1 3>;
+    };
 
-        // 通常時のポインティング設定（感度の変更）
-        xy {
-            // ★追加: カーソル移動を有効にするレイヤーをすべて列挙する (例: 0, 1, 2)
-            // ご自身のキーマップ構成に合わせて番号を変更してください
-            layers = <0 1 2>;
-            input-processors = <&zip_xy_scaler 1 3>;
-        };
-
-        // スクロール時の設定 (レイヤー3, 4がアクティブな時)
-        scroller {
-            layers = <3 4>;
-            input-processors = 
-                <&zip_xy_to_scroll_mapper>, 
-                <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
-        };
+    // 2つ目: スクロール時の設定（スクロール用）
+    trackball_scroll {
+        compatible = "zmk,input-listener";
+        device = <&pointing_device>;
+        layers = <3 4>;
+        input-processors = 
+            <&zip_xy_to_scroll_mapper>, 
+            <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
     };
 };

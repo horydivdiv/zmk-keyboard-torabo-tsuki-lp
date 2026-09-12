@@ -161,11 +161,11 @@
 
         s_sign {
             bindings = <
-&none  &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-&none  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &none
-&none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none
-&none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none
-&none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none
+&none  &none             &none             &none             &none             &none                       &none              &none            &none       &none       &none                &none
+&none  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                  &kp LS(NUMBER_6)   &kp LS(N7)       &kp LS(N8)  &kp LS(N9)  &kp INTERNATIONAL_1  &none
+&none  &trans            &trans            &trans            &trans            &trans      &trans  &trans  &kp RIGHT_BRACKET  &kp NON_US_HASH  &trans      &trans      &trans               &none
+&none  &trans            &trans            &trans            &trans            &trans      &trans  &trans  &trans             &trans           &trans      &trans      &trans               &none
+&none  &trans            &trans            &trans            &trans            &trans      &trans  &trans  &trans             &trans           &trans      &trans      &trans               &none
             >;
         };
     };

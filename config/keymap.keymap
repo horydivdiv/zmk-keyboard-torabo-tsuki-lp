@@ -48,34 +48,9 @@
             key-positions = <32 33 34>;
         };
 
-        mkp_pre {
-            bindings = <&mkp MB4>;
-            key-positions = <63 64>;
-        };
-
-        mkp_nxt {
-            bindings = <&mkp MB5>;
-            key-positions = <64 65>;
-        };
-
-        m_up {
-            bindings = <&msc SCRL_UP>;
-            key-positions = <36 50>;
-        };
-
-        m_down {
-            bindings = <&msc SCRL_DOWN>;
-            key-positions = <50 64>;
-        };
-
-        m_left {
-            bindings = <&msc SCRL_LEFT>;
-            key-positions = <49 50>;
-        };
-
-        m_right {
-            bindings = <&msc SCRL_RIGHT>;
-            key-positions = <50 51>;
+        to4 {
+            bindings = <&to 4>;
+            key-positions = <49 50 64>;
         };
     };
 
@@ -111,11 +86,11 @@
 
         s_main {
             bindings = <
-&none  &none      &none         &none         &none        &none                                          &none                  &none  &none      &none             &none           &to 4
-&none  &kp Q      &kp W         &kp E         &kp R        &kp T                                          &kp Y                  &kp U  &kp I      &kp O             &kp P           &none
-&none  &kp A      &kp S         &kp D         &kp F        &kp G        &LayerTD01       &LayerTD02       &kp H                  &kp J  &kp K      &kp L             &kp MINUS       &none
-&none  &kp Z      &kp X         &kp C         &kp V        &lt 2 B      &trans           &kp TAB          &lt 2 N                &kp M  &kp COMMA  &kp PERIOD        &kp SLASH       &none
-&none  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 3 GRAVE  &lt 1 SPACE  &mt LCTRL ENTER  &kp RIGHT_SHIFT  &lt 1 INTERNATIONAL_4  &none  &none      &kp LEFT_BRACKET  &kp APOSTROPHE  &none
+&none  &none      &none         &none         &none        &none                                          &none                  &none  &none      &none             &none      &to 4
+&none  &kp Q      &kp W         &kp E         &kp R        &kp T                                          &kp Y                  &kp U  &kp I      &kp O             &kp P      &none
+&none  &kp A      &kp S         &kp D         &kp F        &kp G        &LayerTD01       &LayerTD02       &kp H                  &kp J  &kp K      &kp L             &kp MINUS  &none
+&none  &kp Z      &kp X         &kp C         &kp V        &lt 2 B      &trans           &kp TAB          &lt 2 N                &kp M  &kp COMMA  &kp PERIOD        &kp SLASH  &none
+&none  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 3 GRAVE  &lt 1 SPACE  &mt LCTRL ENTER  &kp RIGHT_SHIFT  &lt 1 INTERNATIONAL_4  &none  &none      &kp LEFT_BRACKET  &kp APOS   &none
             >;
         };
 

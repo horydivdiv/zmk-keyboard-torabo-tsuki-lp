@@ -86,11 +86,11 @@
 
         s_main {
             bindings = <
-&none  &none      &none         &none         &none        &none                                          &none                  &none  &none      &none             &none      &none
-&none  &kp Q      &kp W         &kp E         &kp R        &kp T                                          &kp Y                  &kp U  &kp I      &kp O             &kp P      &none
-&none  &kp A      &kp S         &kp D         &kp F        &kp G        &LayerTD01       &LayerTD02       &kp H                  &kp J  &kp K      &kp L             &kp MINUS  &none
-&none  &kp Z      &kp X         &kp C         &kp V        &lt 2 B      &trans           &kp TAB          &lt 2 N                &kp M  &kp COMMA  &kp PERIOD        &kp SLASH  &none
-&none  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 3 GRAVE  &lt 1 SPACE  &mt LCTRL ENTER  &kp RIGHT_SHIFT  &lt 1 INTERNATIONAL_4  &none  &none      &kp LEFT_BRACKET  &kp APOS   &none
+&none  &none      &none         &none         &none        &none                                     &none                  &none  &none      &none             &none      &none
+&none  &kp Q      &kp W         &kp E         &kp R        &kp T                                     &kp Y                  &kp U  &kp I      &kp O             &kp P      &none
+&none  &kp A      &kp S         &kp D         &kp F        &kp G        &LayerTD01  &LayerTD02       &kp H                  &kp J  &kp K      &kp L             &kp MINUS  &none
+&none  &kp Z      &kp X         &kp C         &kp V        &lt 2 B      &trans      &kp TAB          &lt 2 N                &kp M  &kp COMMA  &kp PERIOD        &kp SLASH  &none
+&none  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 3 GRAVE  &lt 1 SPACE  &kp ENTER   &kp RIGHT_SHIFT  &lt 1 INTERNATIONAL_4  &none  &none      &kp LEFT_BRACKET  &kp APOS   &none
             >;
         };
 

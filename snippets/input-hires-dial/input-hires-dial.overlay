@@ -1,3 +1,6 @@
+#include <dt-bindings/zmk/keys.h>
+#include <behaviors/hires_dial.dtsi>
+
 &spi0 {
     status = "disabled";
 };
@@ -25,13 +28,28 @@
     };
 };
 
-#include <behaviors/hires_dial.dtsi>
-
 / {
     sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&hires_dial>;
         triggers-per-rotation = <20>;
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        s_main {
+            sensor-bindings = <&hires_dial_encoder C_VOL_UP C_VOL_DN>;
+        };
+        s_num {
+            sensor-bindings = <&hires_dial_scroll 1 1>;
+        };
+        s_sign {
+            sensor-bindings = <&hires_dial_scroll 10 1>;
+        };
+        function {
+            sensor-bindings = <&hires_dial_radial_controller 4 1>;
+        };
     };
 };
 

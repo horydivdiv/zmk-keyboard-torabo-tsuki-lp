@@ -8,7 +8,7 @@
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_FAST>;
+    clock-frequency = <I2C_BITRATE_STANDARD>;
 
     hires_dial: hires_dial@75 {
         status = "okay";
@@ -23,48 +23,4 @@
         sleep1-enable; 
         sleep2-enable; 
     };
-};
-
-#include <behaviors/hires_dial.dtsi>
-
-/ {
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&hires_dial>;
-        triggers-per-rotation = <20>;
-    };
-};
-
-&hires_dial_encoder {
-    sensor = <&hires_dial>;
-};
-
-&hires_dial_scroll {
-    sensor = <&hires_dial>;
-};
-
-&hires_dial_hscroll {
-    sensor = <&hires_dial>;
-};
-
-&hires_dial_radial_controller {
-    sensor = <&hires_dial>;
-};
-
-&{/keymap/layer_0} {
-    sensor-bindings = <&hires_dial_encoder C_VOL_UP C_VOL_DN>;
-};
-
-/* 1入力カウントをWHEEL値1へ変換 */
-&{/keymap/layer_1} {
-    sensor-bindings = <&hires_dial_scroll 1 1>;
-};
-
-/* 10入力カウントをWHEEL値1へ変換 */
-&{/keymap/layer_2} {
-    sensor-bindings = <&hires_dial_scroll 10 1>;
-};
-
-&{/keymap/layer_3} {
-    sensor-bindings = <&hires_dial_radial_controller 4 1>;
 };

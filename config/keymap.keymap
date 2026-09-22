@@ -49,7 +49,7 @@
         };
 
         to4 {
-            bindings = <&to 4>;
+            bindings = <&lt 4 A>;
             key-positions = <49 50 64>;
         };
     };

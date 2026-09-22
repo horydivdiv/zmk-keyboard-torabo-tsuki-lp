@@ -25,6 +25,8 @@
     };
 };
 
+#include <behaviors/hires_dial.dtsi>
+
 / {
     sensors {
         compatible = "zmk,keymap-sensors";

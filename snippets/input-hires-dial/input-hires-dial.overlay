@@ -53,6 +53,38 @@
     };
 };
 
+/ {
+    /* 1ピンだけの独立したキースキャナを作成 */
+    dial_click_kscan: dial_click_kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        poll-period-ms = <16>;
+        input-gpios = <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+
+    /* 元のマトリクスとダイアルのスイッチを「合体」させる */
+    kscan_combo: kscan_combo {
+        compatible = "zmk,kscan-composite";
+        rows = <5>; 
+        columns = <7>; 
+
+        matrix {
+            kscan = <&kscan0>;
+        };
+
+        dial_button {
+            kscan = <&dial_click_kscan>;
+            /* 右手のビルドエラーを避けるため、左上端のキーに相乗りさせる */
+            row-offset = <2>; 
+            column-offset = <2>; 
+        };
+    };
+
+    /* キーボード全体のキースキャナを、合体させたものに置き換える */
+    chosen {
+        zmk,kscan = &kscan_combo;
+    };
+};
+
 &hires_dial_encoder { sensor = <&hires_dial>; };
 &hires_dial_scroll { sensor = <&hires_dial>; };
 &hires_dial_hscroll { sensor = <&hires_dial>; };

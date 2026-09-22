@@ -48,8 +48,8 @@
             key-positions = <32 33 34>;
         };
 
-        to4 {
-            bindings = <&to 4>;
+        resetbt {
+            bindings = <&lt 4 A>;
             key-positions = <49 50 64>;
         };
     };

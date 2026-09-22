@@ -5,12 +5,6 @@
 #include <behaviors/hires_dial.dtsi>
 
 / {
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&hires_dial>;
-        triggers-per-rotation = <20>;
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -146,8 +140,3 @@
         };
     };
 };
-
-&hires_dial_encoder { sensor = <&hires_dial>; };
-&hires_dial_scroll { sensor = <&hires_dial>; };
-&hires_dial_hscroll { sensor = <&hires_dial>; };
-&hires_dial_radial_controller { sensor = <&hires_dial>; };

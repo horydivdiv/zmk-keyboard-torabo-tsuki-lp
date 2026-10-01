@@ -48,14 +48,39 @@
             key-positions = <32 33 34>;
         };
 
-        mo4 {
-            bindings = <&mo 4>;
+        resetbt {
+            bindings = <&lt 4 A>;
             key-positions = <49 50 64>;
         };
 
-        MO3 {
+        mo2L {
+            bindings = <&mo 2>;
+            key-positions = <44 57>;
+        };
+
+        mo2R {
+            bindings = <&mo 2>;
+            key-positions = <45 60>;
+        };
+
+        mo3L {
             bindings = <&mo 3>;
-            key-positions = <63 64>;
+            key-positions = <44 58 57>;
+        };
+
+        mo3R {
+            bindings = <&mo 3>;
+            key-positions = <59 45 60>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <41 42>;
+        };
+
+        int4 {
+            bindings = <&kp INTERNATIONAL_4>;
+            key-positions = <43 42>;
         };
     };
 

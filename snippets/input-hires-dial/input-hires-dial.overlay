@@ -4,6 +4,12 @@
 #include <zephyr/dt-bindings/gpio/nordic-nrf-gpio.h>
 
 / {
+    /* 追加: 後付け設定（&）のエラーを回避するためのベースノード */
+        hires_dial_encoder: hires_dial_encoder {};
+        hires_dial_scroll: hires_dial_scroll {};
+        hires_dial_hscroll: hires_dial_hscroll {};
+        hires_dial_radial_controller: hires_dial_radial_controller {};
+
     chosen {
         zmk,kscan = &kscan_hires_dial_composite;
     };

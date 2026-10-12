@@ -122,7 +122,6 @@
 &none  &kp Z           &kp X      &kp C         &kp V         &kp B  &kp ESCAPE  &kp TAB     &kp N  &kp M  &kp COMMA  &kp PERIOD    &kp SLASH     &none
 &none  &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mo 1  &kp SPACE   &kp ENTER   &mo 1  &none  &none      &kp LEFT_GUI  &kp LEFT_ALT  &none
             >;
-            sensor-bindings = <&inc_dec_kp 0 0>;
         };
 
         s_num {
@@ -133,7 +132,6 @@
 &none  &kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_SLASH   &trans  &trans  &kp SINGLE_QUOTE  &kp INTERNATIONAL_1  &kp LS(INTERNATIONAL_3)  &kp LS(EQUAL)  &kp LEFT_BRACKET  &none
 &none  &kp LS(KP_DOT)   &kp KP_NUMBER_0  &kp KP_DOT       &trans           &trans         &trans  &trans  &trans            &trans               &trans                   &trans         &trans            &none
             >;
-            sensor-bindings = <&inc_dec_kp 0 0>;
         };
 
         s_sign {
@@ -144,7 +142,6 @@
 &none  &trans            &trans            &trans            &trans            &trans      &trans  &trans  &trans             &trans           &trans      &trans      &trans               &none
 &none  &trans            &trans            &trans            &trans            &trans      &trans  &trans  &trans             &trans           &trans      &trans      &trans               &none
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         function {

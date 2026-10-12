@@ -108,14 +108,14 @@
 /* ★ここから追加: Overlayファイルからキーマップに sensor-bindings を注入する */
 /* ======================================================================== */
 
-&{/keymap/default_layer} {
+&{/keymap/s_main} {
     sensor-bindings = <&inc_dec_kp 0 0>;
 };
 
-&{/keymap/layer_1} {
+&{/keymap/s_num} {
     sensor-bindings = <&inc_dec_kp 0 0>;
 };
 
-&{/keymap/layer_2} {
+&{/keymap/s_sign} {
     sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 };

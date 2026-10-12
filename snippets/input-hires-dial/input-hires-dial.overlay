@@ -49,14 +49,19 @@
     hires_dial_scroll_listener {
         compatible = "zmk,input-listener";
         device = <&hires_dial_scroll>;
-        layers = <0>;
+        
+        config {
+            layers = <0>;
+        };
     };
 
     /* レイヤー1でのみ横スクロールを有効にする */
     hires_dial_hscroll_listener {
         compatible = "zmk,input-listener";
         device = <&hires_dial_hscroll>;
-        layers = <1>;
+        
+        config {
+            layers = <1>;
     };
 };
 

@@ -2,6 +2,8 @@
 #include <zephyr/dt-bindings/i2c/i2c.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <zephyr/dt-bindings/gpio/nordic-nrf-gpio.h>
+/* ★追加: 音量調節のキーコード（C_VOL_UP等）を使うために必須のヘッダ */
+#include <dt-bindings/zmk/keys.h>
 
 / {
     chosen {
@@ -31,31 +33,24 @@
         };
     };
 
-    /* キーマップの sensor-bindings に渡すための設定（レイヤー2の音量調節用） */
     sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&hires_dial>;
         triggers-per-rotation = <20>;
     };
 
-    /* ★変更: レイヤー0でのみ縦スクロールを有効にする */
+    /* ★レイヤー0でのみ縦スクロールを有効にする */
     hires_dial_scroll_listener {
         compatible = "zmk,input-listener";
         device = <&hires_dial_scroll>;
-        
-        vscroll {
-            layers = <0>;
-        };
+        layers = <0>;
     };
 
-    /* ★変更: レイヤー1でのみ横スクロールを有効にする */
+    /* ★レイヤー1でのみ横スクロールを有効にする */
     hires_dial_hscroll_listener {
         compatible = "zmk,input-listener";
         device = <&hires_dial_hscroll>;
-        
-        hscroll {
-            layers = <1>;
-        };
+        layers = <1>;
     };
 };
 
@@ -93,7 +88,6 @@
     };
 };
 
-/* sekigon氏のモジュールが提供する仮想デバイスへの割り当て */
 &hires_dial_encoder {
     sensor = <&hires_dial>;
 };
@@ -110,26 +104,18 @@
     sensor = <&hires_dial>;
 };
 
-### 2. キーマップ（.keymap）側の設定
-Overlayでスクロールの制御ができたので、あとは `torabo_tsuki_lp.keymap` ファイル側で各レイヤーにダイアルの動作（エンコーダとしての動作）を割り当てます。
+/* ======================================================================== */
+/* ★ここから追加: Overlayファイルからキーマップに sensor-bindings を注入する */
+/* ======================================================================== */
 
-// レイヤー0 (縦スクロール)
-default_layer {
-    bindings = < ... >;
-    // Overlay側の input-listener がスクロールを処理するため、キーマップ側では何もしない
-    sensor-bindings = <&inc_dec_kp 0 0>; 
+&{/keymap/default_layer} {
+    sensor-bindings = <&inc_dec_kp 0 0>;
 };
 
-// レイヤー1 (横スクロール)
-layer_1 {
-    bindings = < ... >;
-    // 同上
-    sensor-bindings = <&inc_dec_kp 0 0>; 
+&{/keymap/layer_1} {
+    sensor-bindings = <&inc_dec_kp 0 0>;
 };
 
-// レイヤー2 (音量調節)
-layer_2 {
-    bindings = < ... >;
-    // ここで音量を割り当てる。リスナー（スクロール）は無効化されているため音量のみが機能する
-    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>; 
+&{/keymap/layer_2} {
+    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 };

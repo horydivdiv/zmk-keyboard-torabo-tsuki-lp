@@ -6,6 +6,12 @@
 #include <behaviors.dtsi>
 
 / {
+    /* ★復活: 後付け設定のエラーを回避するためのベースノード */
+    hires_dial_encoder: hires_dial_encoder {};
+    hires_dial_scroll: hires_dial_scroll {};
+    hires_dial_hscroll: hires_dial_hscroll {};
+    hires_dial_radial_controller: hires_dial_radial_controller {};
+
     chosen {
         zmk,kscan = &kscan_hires_dial_composite;
     };
@@ -39,14 +45,14 @@
         triggers-per-rotation = <20>;
     };
 
-    /* ★レイヤー0でのみ縦スクロールを有効にする */
+    /* レイヤー0でのみ縦スクロールを有効にする */
     hires_dial_scroll_listener {
         compatible = "zmk,input-listener";
         device = <&hires_dial_scroll>;
         layers = <0>;
     };
 
-    /* ★レイヤー1でのみ横スクロールを有効にする */
+    /* レイヤー1でのみ横スクロールを有効にする */
     hires_dial_hscroll_listener {
         compatible = "zmk,input-listener";
         device = <&hires_dial_hscroll>;

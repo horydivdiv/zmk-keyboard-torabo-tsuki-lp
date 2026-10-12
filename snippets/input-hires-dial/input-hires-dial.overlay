@@ -109,19 +109,3 @@
 &hires_dial_radial_controller {
     sensor = <&hires_dial>;
 };
-
-/* ======================================================================== */
-/* ★ここから追加: Overlayファイルからキーマップに sensor-bindings を注入する */
-/* ======================================================================== */
-
-&{/keymap/s_main} {
-    sensor-bindings = <&inc_dec_kp 0 0>;
-};
-
-&{/keymap/s_num} {
-    sensor-bindings = <&inc_dec_kp 0 0>;
-};
-
-&{/keymap/s_sign} {
-    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
-};

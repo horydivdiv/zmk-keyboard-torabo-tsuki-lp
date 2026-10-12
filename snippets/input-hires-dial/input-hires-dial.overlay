@@ -21,7 +21,7 @@
 
         matrix {
             kscan = <&kscan0>;
-            col-offset = <TORABO_TSUKI_LP_MATRIX_COL_OFFSET>;
+            col-offset = <0>;
         };
 
         dial-button {

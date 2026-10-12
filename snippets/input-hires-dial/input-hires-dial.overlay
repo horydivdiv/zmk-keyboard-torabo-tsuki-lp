@@ -2,8 +2,8 @@
 #include <zephyr/dt-bindings/i2c/i2c.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <zephyr/dt-bindings/gpio/nordic-nrf-gpio.h>
-/* ★追加: 音量調節のキーコード（C_VOL_UP等）を使うために必須のヘッダ */
 #include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
 
 / {
     chosen {

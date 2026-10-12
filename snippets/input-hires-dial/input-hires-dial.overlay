@@ -109,3 +109,37 @@
 &hires_dial_radial_controller {
     sensor = <&hires_dial>;
 };
+
+/* ======================================================================== */
+/* 修正版: Overlayファイルからキーマップに sensor-bindings を安全に注入する */
+/* ======================================================================== */
+
+/ {
+    /* 
+     * .keymap ファイルよりも先にパースされるため、
+     * ここでノードの「枠組み（ラベル）」だけを事前宣言しておきます。
+     */
+    keymap {
+        compatible = "zmk,keymap";
+        
+        s_main: s_main {};
+        s_num: s_num {};
+        s_sign: s_sign {};
+    };
+};
+
+/* 
+ * 上記で宣言したラベルに対して、sensor-bindings を追加します。
+ * 後から読み込まれる .keymap ファイルの設定と自動的にマージされます。
+ */
+&s_main {
+    sensor-bindings = <&inc_dec_kp 0 0>;
+};
+
+&s_num {
+    sensor-bindings = <&inc_dec_kp 0 0>;
+};
+
+&s_sign {
+    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+};
